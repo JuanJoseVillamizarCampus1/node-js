@@ -9,7 +9,7 @@ const empleadoSchema = mongoose.Schema({
         required: true,
         trim:true
     },
-    apellido:{
+    Apellido:{
         type:String,
         required: true,
         trim: true
