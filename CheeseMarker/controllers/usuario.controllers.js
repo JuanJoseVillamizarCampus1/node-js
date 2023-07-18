@@ -4,11 +4,16 @@ const getUsers= (req,res)=>{
     res.json({"message":"home page"})
 }
 const postUsers= async (req,res)=>{
-    const body= req.body;
+    try {
+        const body= req.body;
     const usuario = new Usuario (body);
     await usuario.save()
     res.json({
         "message":"post api",usuario})
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+    
 }
 const deleUsers=(req,res)=>{
     res.json({
