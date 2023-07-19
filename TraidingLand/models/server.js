@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import cors from "cors";
 import conectarDB from "../config/config.js";
 import routes from "../routes/acciones.routes.js"
@@ -14,6 +14,7 @@ export default class Server{
     }
     middlewares(){
         //CORS
+        this.app.use(json());
         this.app.use(cors());
     }
     routes(){

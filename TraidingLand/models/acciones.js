@@ -11,8 +11,6 @@ const accionesSchema = mongoose.Schema(
     {
         timestamps:true
     }
-
 );
 const Acciones = mongoose.model("Acciones",accionesSchema)
-
 export default Acciones;
