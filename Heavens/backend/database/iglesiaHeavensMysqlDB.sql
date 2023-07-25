@@ -1,6 +1,6 @@
--- Active: 1689959898661@@127.0.0.1@3306@iglesiaHeavensMysqlDB
-
+-- Active: 1690151915021@@127.0.0.1@3306@iglesiaheavensmysqldb
 CREATE DATABASE iglesiaHeavensMysqlDB;
+
 use iglesiaHeavensMysqlDB;
 CREATE TABLE Creyente(
     id_creyente INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -34,3 +34,10 @@ CREATE TABLE Departamento (
     nombre_departamento VARCHAR(50) NOT NULL
 );
 DROP DATABASE iglesiaHeavensMysqlDB;
+INSERT INTO Departamento (nombre_departamento) VALUES ('Santander'),('Boyaca'),('Risaralda'),('Norte de Santander'),('Cesar');
+INSERT INTO Municipio (nombre_municipio,id_departamento) VALUES ('Bucaramanga',1),('Floridablanca',1),('Giron',1),('Piedecuesta',1);
+INSERT INTO Comuna (nombre_comuna,id_municipio) VALUES ('Comuna 1 Norte',1),('Comuna 2 Nororiental',1),('Comuna 3 San Francisco',1),('Comuna 4 Occidental',1),('Comuna 5 García Rovira',1);
+
+INSERT INTO Comuna (nombre_comuna,id_municipio) VALUES ('Comuna 1 CASCO ANTIGUO',2),('Comuna 2 CAÑAVERAL',2),('Comuna 3 BUCARICA',2),('Comuna 4 BOSQUE-MOLINOS',2),('Comuna 5 LAGOS -BELLAVISTA',2);
+
+INSERT INTO Barrio (nombre_barrio,id_comuna) VALUES ('Café Madrid',1),('Kennedy',1),('Quinta Estrella',5),('La Joya',5),('CampoHermoso',5),('Cañaveral',7);
