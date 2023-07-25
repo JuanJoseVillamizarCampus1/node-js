@@ -1,9 +1,12 @@
 const Usuario = require('../models/Usuario.js');
 const bcryptjs = require('bcryptjs');
 
-const getUsers= (req,res)=>{
-    res.json({"message":"home page"})
+const getUsers= async(req,res)=>{
+    const categorias = await Usuario.find();
+    res.json(categorias);
+    
 }
+
 const postUsers= async (req,res)=>{
     try {
 

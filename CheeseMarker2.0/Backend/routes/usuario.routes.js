@@ -2,14 +2,11 @@ const {Router}= require ('express');
 const {check} = require ('express-validator')
 const {validationDoc} = require('../middlewares/validate.documents.js')
 const {rol} = require ('../models/Role.js')
-const router = Router();
 const {getUsers,postUsers,deleUsers,addUsers,updateUsers} = require ('../controllers/usuario.controllers.js');
 const Role = require('../models/Role.js');
-module.exports= router;
 
-
-router.get("/",getUsers)
-
+const router = Router();
+router.get("/getall",getUsers)
 router.post("/",[
     check('email','El correo no es valido').isEmail(),
     check('nombre','El nombre no es valido').not().isEmpty(),
@@ -24,3 +21,5 @@ router.post("/",[
 router.delete("/",deleUsers)
 router.put("/",addUsers)
 router.patch("/",updateUsers)
+
+module.exports= router;
