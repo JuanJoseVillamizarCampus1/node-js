@@ -3,6 +3,7 @@ import  express from "express";
 import cors from "cors";
 import getConnection from "../database/database.js";
 import  routerDeparatamento from "../routes/departamento.routes.js";
+import routerMunicipio from "../routes/municipio.routes.js";
 
 class Server{
 
@@ -27,7 +28,8 @@ class Server{
         this.app.use(express.json());
     }
     routes(){
-        this.app.use(this.heavensPath,routerDeparatamento)
+        this.app.use(this.heavensPath,routerDeparatamento);
+        this.app.use(this.heavensPath,routerMunicipio)
     }
     listening(){
         this.app.listen(this.port,()=>{
