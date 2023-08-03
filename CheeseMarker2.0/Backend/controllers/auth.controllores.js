@@ -19,6 +19,8 @@ const login =  async (req,res=response)=>{
         if (!passwordCorrecta) {
             return res.status(400).json({error:"El password no es correcto"})
         }
+        //Validacion jsowebtoken
+        
         res.json({
             msg:"Ok todo bien"
         })
