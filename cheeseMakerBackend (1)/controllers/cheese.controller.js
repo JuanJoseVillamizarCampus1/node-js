@@ -8,15 +8,12 @@ const postCheese = async(req, res ) => {
             msg: `El queso ${ cheeseDB.nombre }, ya existe`
         });
     }
-    Cheese.find(query).populate('usuario', 'nombre')
-    Categoria.find(query).populate('usuario', ['nombre', 'email'])
     const data = {
         nombre,
         precio,
         descripcion,
         disponibilidad,
-        usuario: req.usuario._id,
-        categoria: req.categoria._id
+        usuario: req.usuario._id
     }    
     const cheese = new Cheese( data );
     // Guardar DB

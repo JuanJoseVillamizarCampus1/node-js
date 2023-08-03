@@ -4,7 +4,7 @@ const { validateDocuments} = require('../middlewares/validate.documents.js');
 const { validateJWT } = require('../middlewares/validate.jwt.js');
 const { postCheese} = require('../controllers/cheese.controller.js');
 const { isAdminRole } = require('../middlewares/validate.role.js');
-const { CategoriaExistsById,userExistsById } = require('../helpers/db.validators.js');
+const {  } = require('../helpers/db.validators.js');
 const router = Router();
 
 /**
@@ -14,9 +14,6 @@ const router = Router();
 router.post('/', [ 
    validateJWT, 
     check('nombre','El nombre es obligatorio').not().isEmpty(),
-    check('id').custom( CategoriaExistsById ),
-    check('id').custom( userExistsById ),
-    
     validateDocuments
 ], postCheese );
 module.exports = router;
