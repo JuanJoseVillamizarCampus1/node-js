@@ -1,7 +1,7 @@
 const Cheese = require('../models/Cheese.js')
 
 const postCheese = async(req, res ) => {
-    const {nombre,precio,descripcion,disponibilidad}= req.body
+    const {nombre,precio,descripcion,disponibilidad,categoria}= req.body
     const cheeseDB = await Cheese.findOne({ nombre });
     if ( cheeseDB ) {
         return res.status(400).json({
@@ -13,6 +13,7 @@ const postCheese = async(req, res ) => {
         precio,
         descripcion,
         disponibilidad,
+        categoria,
         usuario: req.usuario._id
     }    
     const cheese = new Cheese( data );
